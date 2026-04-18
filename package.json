@@ -1,0 +1,26 @@
+{
+  "name": "eye-of-horus-entryflow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eye of Horus : EntryFlow — Client-Side Multi-Person People Counter",
+  "author": "Eye of Horus CV Group",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow/tfjs": "^4.17.0",
+    "jszip": "^3.10.1",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^8.0.8"
+  }
+}

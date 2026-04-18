@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html, body {
+    @apply bg-horus-bg text-horus-text;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar        { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { @apply bg-horus-card; }
+  ::-webkit-scrollbar-thumb  { @apply bg-horus-border rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-horus-muted; }
+}
+
+@layer components {
+  .card {
+    @apply bg-horus-card border border-horus-border rounded-xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium
+           text-sm transition-all duration-200 cursor-pointer select-none
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-gold {
+    @apply btn bg-horus-gold text-horus-bg hover:bg-horus-gold-light active:scale-95;
+  }
+
+  .btn-outline {
+    @apply btn border border-horus-border text-horus-text
+           hover:border-horus-gold hover:text-horus-gold active:scale-95;
+  }
+
+  .btn-danger {
+    @apply btn border border-horus-red/50 text-horus-red
+           hover:bg-horus-red/10 active:scale-95;
+  }
+
+  .badge-in  { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-bold bg-horus-green/15 text-horus-green; }
+  .badge-out { @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-bold bg-horus-red/15 text-horus-red; }
+
+  .stat-label { @apply text-xs uppercase tracking-widest text-horus-text-dim font-medium; }
+  .stat-value { @apply font-mono font-bold; }
+}
+
+/* Custom video/canvas container */
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  border-radius: 0.75rem;
+}
+.video-wrapper video,
+.video-wrapper canvas.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.video-wrapper canvas.overlay {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+/* Scan line animation for idle state */
+@keyframes scanline {
+  0%   { top: 0%; }
+  100% { top: 100%; }
+}
+.scanline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+}
