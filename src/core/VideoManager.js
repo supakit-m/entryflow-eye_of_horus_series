@@ -45,7 +45,7 @@ export class VideoManager {
    * @param {HTMLVideoElement} videoEl
    * @param {string} src — path to the video file
    */
-  async startDemoVideo (videoEl, src = '/demo/demo.mp4') {
+  async startDemoVideo (videoEl, src = '/entryflow-eye_of_horus_series/demo/demo.mp4') {
     this.videoEl = videoEl
     videoEl.src = src
     videoEl.loop  = true
