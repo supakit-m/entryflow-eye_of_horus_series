@@ -1,3 +1,6 @@
+
+# Link : https://supakit-m.github.io/entryflow-eye_of_horus_series/
+
 # 👁 Eye of Horus : EntryFlow
 
 > Client-side real-time multi-person people counter — no backend, no uploads, no cloud.
@@ -151,9 +154,3 @@ entryflow_export_2024-01-01T00-00-00/
 | ZIP | JSZip |
 
 ---
-
-## Eye of Horus Project Group
-
-**EntryFlow** is a sub-project under the *Eye of Horus* computer vision umbrella.
-
-> *"The eye sees all that enters and all that departs."*
